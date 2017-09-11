@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>Bases Play Music</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"  media="all"/>
+    <link rel="icon" href="favicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!--Logo-->
+    <div class="BasesPlayMusic-container top" id="home">
+      <a href="//bases.ing.puc.cl/~grupo9" class="BasesPlayMusic-logo">
+        Bases Play <span class="Music">Music</span>
+      </a>
+    </div>
+
+    <!--Menu superior-->
+    <ul class="topbar">
+      <li>
+        <span id="side-open" onclick="openNav()">
+          <img class="side-menu center" src="images/side.png" >
+        </span>
+      </li>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#display">Display</a></li>
+      <li><a href="#console">Console</a></li>
+    </ul>
+
+    <div id="main">
+
+      <!--Menu lateral-->
+      <div id="right-arrow" class="circle" onclick="openNav()" style="top:50%">
+        <span class="center" style="margin-top: 50%; margin-left:0">
+          <i class="arrowr"></i>
+        </span>
+      </div>
+
+      <div class="sidenav" id="lateral-menu">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+          &times;
+        </a>
+        <a class="side" href="#">Service1</a>
+        <a class="side" href="#">Service2</a>
+      </div>
+
+
+      <!-- Form que llama a conexion.php en el iframe -->
+      <form id="console" action="conexion.php" method="post" target="consultar">
+        Consulta: <br>
+        <input type="text" name="query">
+        <input id="javasend" type="submit">
+      </form>
+
+      <!--display de tablas-->
+      <div style="overflow-x:auto;" class="table">
+        <table id= "display"></table>
+      </div>
+    </div>
+
+    <!--Encargado de la conexion con la base de datos-->
+    <iframe id="response" name= "consultar">
+      <h1>Hola</h1>
+    </iframe>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="scripts/sidenav.js"></script>
+  </body>
+</html>
