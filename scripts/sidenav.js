@@ -1,19 +1,25 @@
 baseColor= document.body.style['background-color']
+var open;
 
 function openNav(){
+  open = true;
   if($(window).width() > 600){
     document.getElementById("lateral-menu").style.width = "170px";
     document.getElementById("main").style["margin-left"] = "170px";
   }else{
     document.getElementById("lateral-menu").style.width = "75%";
+    document.getElementById("right-arrow").style["margin-left"] = "75%";
     document.getElementById("main").style["margin-left"] = "75%";
+    if (open == true){
+      closeNav();
+    }
   }
   //document.body.style['background-color'] = "black";
   //document.body.style['opacity'] = "0.5";
-  //hola
 }
 
 function closeNav(){
+  open = false;
   document.getElementById("lateral-menu").style.width = "0%";
   document.getElementById("right-arrow").style["margin-left"] = "0";
   document.getElementById("main").style["margin-left"] = "0";
