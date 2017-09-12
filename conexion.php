@@ -7,7 +7,7 @@
       <?php
       include(".credentials.php");
       include("sqlread.php")
-      if (array_key_exists("qury",$_POST)){
+      if (array_key_exists("query",$_POST)){
         $query = $_POST["query"];
         $sql = ''.trim($query).'';
       }else if (array_key_exists("qury",$_POST)){
