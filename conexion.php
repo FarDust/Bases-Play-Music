@@ -7,12 +7,11 @@
       <?php
       include(".credentials.php");
       include("sqlread.php")
-      echo array_key_exists('query',$_POST);
-      if (array_key_exists('query',$_POST)){
+      if (bool array_key_exists('query',$_POST)){
         $query = $_POST["query"];
         $sql = ''.trim($query).'';
       }
-      if (array_key_exists("static",$_POST)){
+      if (bool array_key_exists("static",$_POST)){
         echo $staticSQL[$_POST['static']];
         $sql = $staticSQL[$_POST['static']];
       }
