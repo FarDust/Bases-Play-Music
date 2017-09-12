@@ -33,14 +33,14 @@
     <div id="main">
       <div class="consult">
         <form action="../conexion.php" method="post" target="consultar">
-          <select name="posible">
-            <option value="0">SELECT * FROM test</option>
+          <select name="query">
+            <option value="0">Mostrar Test</option>
           </select>
           <input id="javasend" type="submit">
         </form>
-        <table>
-
-        </table>
+      </div>
+      <div style="overflow-x:auto;" class="table">
+        <table id= "display"></table>
       </div>
     </div>
     <script type="text/javascript" src="../script.js"></script>
