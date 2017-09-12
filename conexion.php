@@ -10,7 +10,7 @@
       if (array_key_exists("query",$_POST)){
         $query = $_POST["query"];
         $sql = ''.trim($query).'';
-      }else if (array_key_exists("qury",$_POST)){
+      }else if (array_key_exists("static",$_POST)){
         echo $staticSQL[$_POST['static']];
         $sql = $staticSQL[$_POST['static']];
       }
