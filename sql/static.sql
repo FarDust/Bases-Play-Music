@@ -1,1 +1,2 @@
 SELECT * FROM Test;
+SELECT * FROM EstudioI1;
