@@ -10,6 +10,7 @@
       $query = $_POST["query"];
       $sql = ''.trim($query).'';
       if ($_POST['static']){
+        echo $staticSQL[$_POST['static']];
         $sql = $staticSQL[$_POST['static']];
       }
       $db = pg_connect("host=localhost dbname=".trim($dbname)." user=".trim($dbuser)." password=".trim($dbpass)."") or die('Conection failed: '.pg_last_error());
