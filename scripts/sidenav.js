@@ -10,6 +10,7 @@ function openNav(){
   }
   //document.body.style['background-color'] = "black";
   //document.body.style['opacity'] = "0.5";
+  //hola
 }
 
 function closeNav(){

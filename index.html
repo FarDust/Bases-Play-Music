@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="styles.css"  media="all"/>
     <link rel="icon" href="favicon.png">
-    <link rel="import" href="../snipsets/header.html">
+    <link rel="import" href="snipsets/header.html">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://www.w3schools.com/lib/w3.js"></script>
   </head>
@@ -31,23 +31,22 @@
       <li><a href="#console">Console</a></li>
     </ul>
 
+    <!--Menu lateral-->
+    <div id="right-arrow" class="circle" onclick="openNav()" style="top:50%">
+      <span class="center" style="margin-top: 50%; margin-left:0">
+        <i class="arrowr"></i>
+      </span>
+    </div>
+
+    <div class="sidenav" id="lateral-menu">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+        &times;
+      </a>
+      <a class="side" href="sites/static.html">StaticSQL</a>
+      <a class="side" href="#">Service2</a>
+    </div>
+
     <div id="main">
-
-      <!--Menu lateral-->
-      <div id="right-arrow" class="circle" onclick="openNav()" style="top:50%">
-        <span class="center" style="margin-top: 50%; margin-left:0">
-          <i class="arrowr"></i>
-        </span>
-      </div>
-
-      <div class="sidenav" id="lateral-menu">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
-          &times;
-        </a>
-        <a class="side" href="#">Service1</a>
-        <a class="side" href="#">Service2</a>
-      </div>
-
 
       <!-- Form que llama a conexion.php en el iframe -->
       <form id="console" action="conexion.php" method="post" target="consultar">
