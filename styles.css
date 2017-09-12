@@ -59,6 +59,7 @@ ul.topbar li.right {
 }
 
 @media screen and (max-width: 600px){
+    ul.topbar {width: 100%;}
     ul.topbar li.right,
     ul.topbar li {float: none;}
     div.BasesPlayMusic-container{text-align: center;}
