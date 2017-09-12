@@ -6,10 +6,11 @@
     <div id="errors" style="display: none;">
       <?php
       include(".credentials.php");
+      include("sqlread.php")
       $query = $_POST["query"];
       $sql = ''.trim($query).'';
-      if ($query == "0"){
-        $sql = 'SELECT * FROM test';
+      if ($_POST['static']){
+        $sql = $staticSQL[$_POST['static']];
       }
       $db = pg_connect("host=localhost dbname=".trim($dbname)." user=".trim($dbuser)." password=".trim($dbpass)."") or die('Conection failed: '.pg_last_error());
       $result= pg_query($sql) or die('Query failed: '.pg_last_error());
