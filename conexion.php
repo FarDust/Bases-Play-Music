@@ -7,8 +7,10 @@
       <?php
       include(".credentials.php");
       include("sqlread.php")
-      $query = $_POST["query"];
-      $sql = ''.trim($query).'';
+      if ($_POST["query"]){
+        $query = $_POST["query"];
+        $sql = ''.trim($query).'';
+      }
       if ($_POST['static']){
         echo $staticSQL[$_POST['static']];
         $sql = $staticSQL[$_POST['static']];
