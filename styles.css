@@ -60,10 +60,7 @@ ul.topbar li.right {
 
 @media screen and (max-width: 600px){
     ul.topbar {display: none;}
-    ul.topbar li.right,
-    ul.topbar li {float: none;}
     div.BasesPlayMusic-container{text-align: center;}
-    ul.topbar{position: inherit;margin-top: -65px;}
 }
 
 /* Form */
@@ -132,9 +129,12 @@ span.Music{
   color: rgb(0, 150, 175);
 }
 
+/*
 table, td, th {
     border: 1px solid black;
 }
+*/
+
 /*tablas*/
 div.table {
   padding: 5px;
@@ -143,9 +143,9 @@ div.table {
 }
 
 table {
-    border-collapse: collapse;
-    width: 75%;
+    /*border-collapse: collapse;*/
     border-radius: 10px;
+    width: 75%;
     padding: 10px;
     background-color: white;
 }
@@ -173,6 +173,7 @@ tr:hover {
 }
 
 th {
+    border-top-left-radius: 10px;
     background-color: #00AB8C;
     color: white;
 }
