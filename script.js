@@ -7,14 +7,17 @@ var topy = document.getElementsByClassName("topbar")[0].style["margin-top"]
 function scrolling(){
   logo = document.getElementsByClassName("BasesPlayMusic-container")[0].style
   menu = document.getElementsByClassName("topbar")[0].style
+  sidebar = document.getElementById("lateral-menu").style
   if (window.pageYOffset <= 56){
     logo.display = "inherit";
     logo.top = "0";
     menu["margin-top"] = topy;
+    sidebar["margin-top"] = topy;
   } else if (window.pageYOffset > 56){
     logo.display = "none";
     logo.top = "inherit";
     menu["margin-top"] = "0";
+    side["margin-top"] = "0";
   }
 }
 
