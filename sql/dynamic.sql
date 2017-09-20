@@ -1,0 +1,1 @@
+SELECT * FROM Artista, Banda, Miembro WHERE Artista.id = aid Banda.id = Miembro.bid AND Artista.nombre = $1;

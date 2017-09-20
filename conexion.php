@@ -15,8 +15,15 @@
         echo $staticSQL[$_POST['static']];
         $sql = $staticSQL[$_POST['static']];
       }
+	  if (isset($_POST['dynamic'])){
+		  echo $dynamicSQL[$_POST['dynamic']]
+		  $sql = $dynamicSQL[$_POST['dynamic']]
+	  }
       $db = pg_connect("host=localhost dbname=".trim($dbname)." user=".trim($dbuser)." password=".trim($dbpass)."") or die('Conection failed: '.pg_last_error());
       $result= pg_query($sql) or die('Query failed: '.pg_last_error());
+	  if (isset($_POST['dynamic'])){
+		  $result = pg_query_params($db,$sql,_POST['']);
+	  }
       pg_close();
 
       $json_result = json_encode(pg_fetch_all($result));
