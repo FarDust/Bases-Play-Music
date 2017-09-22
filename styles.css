@@ -20,6 +20,10 @@ body {
   margin: 2px;
 }
 
+#begin a:hover {
+  background-color: black;
+}
+
 #begin:hover{
   background-color: #00F7CB;
 }
