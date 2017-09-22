@@ -10,12 +10,10 @@
       elseif (isset($_POST['query'])){
         $query = $_POST["query"];
         $sql = ''.trim($query).'';
-      }
-      elseif (isset($_POST['static'])){
+      }elseif (isset($_POST['static'])){
         echo $staticSQL[$_POST['static']];
         $sql = $staticSQL[$_POST['static']];
-      }
-  	  elseif (isset($_POST['dynamic'])){
+      }elseif (isset($_POST['dynamic'])){
   		  echo $dynamicSQL[$_POST['option']];
   		  $sql = $dynamicSQL[$_POST['option']];
   	  }
