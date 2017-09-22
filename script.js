@@ -47,12 +47,16 @@ function printTable(tabla,printable){
 function fullyload(){
   deleteTable(table);
   var textArea = iframe.contentDocument.getElementById("result");
+  var viewArea = document.getElementsByClassName("table")[0];
   console.log(textArea);
   if (textArea){
     var array = JSON.parse(textArea.innerHTML);
     console.log(array);
     if (array.length > 0){
         printTable(table,array);
+        viewArea.style.display = "table"
+    }else{
+      viewArea.style.display = "none"
     }
   }
 }
