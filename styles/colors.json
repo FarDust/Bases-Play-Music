@@ -1,8 +1,8 @@
 [
   {
-    "_key": "principal",
+    "_key": "main",
     "palette": {
-      "principal": "#00AB8C",
+      "base": "#00AB8C",
       "analogous": [
         "#0AC251",
         "#09B800",
