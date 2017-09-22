@@ -3,7 +3,7 @@
   <head>
   </head>
   <body>
-    <div id="errors" style="display: none;">
+    <div id="errors" style="/* display: none; */">
       <?php
       include(".credentials.php");
       include("sqlread.php");
