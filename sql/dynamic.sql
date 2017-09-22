@@ -1,1 +1,2 @@
 SELECT Banda.* FROM Artista, Banda, Miembro WHERE Artista.id = Miembro.ida AND Banda.id = Miembro.idb AND Artista.nombre = $1
+SELECT Banda.nombre FROM Banda,Disco, BandaAutorOf WHERE Banda.id = BandaAutorOf.idb AND Disco.id = BandaAutorOf.idd AND Disco.nombre = $1  UNION SELECT Artista.nombre Artista, Disco, ArtistaAutorOf WHERE Artista.id = BandaAutorOf.idb AND Disco.id = BandaAutorOf.idd AND Disco.nombre = $1;
