@@ -20,12 +20,8 @@ body {
   margin: 2px;
 }
 
-#begin a:hover {
-  color: black;
-}
-
 #begin:hover{
-  background-color: #00F7CB;
+  background-color: #0AC251;
 }
 
 ul.ref-menu {
@@ -141,7 +137,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #00F7CB;
+    background-color: #0AC251;
     /*width: 90px;*/
 }
 
