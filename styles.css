@@ -8,6 +8,18 @@ body {
   background-color: #d8d8d8;
 }
 /*ref menu*/
+#begin{
+  background-color: #4caf50;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#begin a{
+  text-decoration: none;
+  color: white;
+  margin: 2px;
+}
+
 ul.ref-menu {
   list-style-type: none;
   padding: 0;
@@ -17,6 +29,7 @@ ul.ref-menu {
 }
 
 ul.ref-menu li {
+    display: inline-block;
     float: none;
 }
 
