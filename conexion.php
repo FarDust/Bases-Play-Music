@@ -7,7 +7,7 @@
       <?php
       include(".credentials.php");
       include("sqlread.php");
-      elseif (isset($_POST['query'])){
+      if (isset($_POST['query'])){
         $query = $_POST["query"];
         $sql = ''.trim($query).'';
       }elseif (isset($_POST['static'])){
