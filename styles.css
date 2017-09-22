@@ -9,7 +9,7 @@ body {
 }
 /*ref menu*/
 #begin{
-  background-color: #4caf50;
+  background-color: #37B9A2;
   border-radius: 5px;
   padding: 5px;
 }
@@ -121,7 +121,7 @@ input[type=text], select {
 
 input[type=submit] {
     width: 77.8px;
-    background-color: #4CAF50;
+    background-color: #37B9A2;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
