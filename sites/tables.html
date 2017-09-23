@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css"  media="all"/>
     <link rel="icon" href="../favicon.png">
-    <link rel="import" href="../snipsets/structure.html">
-    <link rel="sql" href="../sql/tablas.sql">
+    <link id="structure" rel="import" href="../snipsets/structure.html">
+    <link id="sql" rel="import" href="../sql/tablas.sql">
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
@@ -16,7 +16,7 @@
   <body>
     <!--logo-->
     <script type="text/javascript">
-      var doc= document.querySelector('link[rel="import"]').import;
+      var doc= document.querySelector('link[id="structure"]').import;
       console.log(doc);
       //Logo
       var text = doc.querySelector('#home');

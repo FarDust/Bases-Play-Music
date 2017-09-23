@@ -1,2 +1,2 @@
-var doc= document.querySelector('link[rel="sql"]').import;
+var doc= document.querySelector('link[id="sql"]').import;
 console.log(doc);
