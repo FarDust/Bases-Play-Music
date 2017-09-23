@@ -7,6 +7,19 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: #d8d8d8;
 }
+
+/*info*/
+div.info{
+  border-radius: 5px;
+
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+div.info p{
+  padding: 10px;
+  margin: 5px;
+}
+
 /*ref menu*/
 #begin{
   background-color: #37B9A2;
