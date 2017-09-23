@@ -18,7 +18,7 @@ while(!feof($myfile)) {
 }
 
 fclose($myfile);
-$myfile = fopen("sql/tables.sql", "r") or die("Unable to open file!");
+$myfile = fopen("sql/tablas.sql", "r") or die("Unable to open file!");
 $i = 0;
 while(!feof($myfile)) {
   $tables[$i] = fgets($myfile);
