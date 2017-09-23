@@ -16,5 +16,13 @@ while(!feof($myfile)) {
   $dynamicSQL[$i] = fgets($myfile);
   $i++;
 }
+
+fclose($myfile);
+$myfile = fopen("sql/tables.sql", "r") or die("Unable to open file!");
+$i = 0;
+while(!feof($myfile)) {
+  $tables[$i] = fgets($myfile);
+  $i++;
+}
 fclose($myfile);
 ?>
