@@ -1,2 +1,2 @@
 var doc= document.querySelector('link[id="sql"]').import;
-console.log(doc);
+console.log(doc.body);
