@@ -7,6 +7,7 @@
       <?php
       include(".credentials.php");
       include("sqlread.php");
+      
       if (isset($_POST['table'])){
         echo $tables[$_POST['table']];
         $sql = $tables[$_POST['table']];
