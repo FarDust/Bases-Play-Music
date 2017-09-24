@@ -1,2 +1,1 @@
-SELECT * FROM Test;
-SELECT * FROM EstudioI1;
+SELECT email FROM Artista, Bandan, Miembro, Email WHERE Artista.id = Miembro.ida AND Banda.id = Miembro.idb AND HasEmail.id = Artista.id AND Email.email = HasEmail.email AND Miembro.fecha_ingreso > now() AND Miembro.fecha_abandono < now();
