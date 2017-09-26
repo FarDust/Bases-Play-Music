@@ -3,4 +3,4 @@ SELECT Artista.nombre FROM Banda,Disco, BandaAutorOf, Miembro, Artista WHERE Ban
 SELECT Artista.* FROM Artista, Banda, Miembro WHERE Artista.id = Miembro.ida AND Banda.id = Miembro.idb AND Miembro.fecha_ingreso < now() AND Miembro.fecha_abandono > now() AND Banda.nombre = $1;
 SELECT Artista.* FROM Artista, Banda, Miembro WHERE Artista.id = Miembro.ida AND Banda.id = Miembro.idb AND Miembro.fecha_ingreso < now() AND Miembro.fecha_abandono < now() AND Banda.nombre = $1;
 SELECT Artista.nombre,Email.email FROM Artista, Banda, Miembro, Email, HasEmail WHERE Artista.id = Miembro.ida AND Banda.id = Miembro.idb AND HasEmail.id = Artista.id AND Email.email = HasEmail.email AND Miembro.fecha_ingreso < now() AND Miembro.fecha_abandono > now() AND Banda.nombre = $1;
-La ultima consulta va en esta linea
+SELECT ida, COUNT(ida) as cuenta FROM artistaautorof WHERE idd IN (SELECT disco.id FROM disco WHERE disco.fecha > $1) GROUP BY ida UNION SELECT miembro.ida, prueba.cuenta FROM miembro, (SELECT idb, COUNT(idb) as cuenta FROM bandaautorof WHERE idd IN (SELECT disco.id FROM disco WHERE disco.fecha > $1) GROUP BY idb) AS prueba WHERE prueba.idb = miembro.idb;
