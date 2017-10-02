@@ -1,0 +1,3 @@
+[submodule "API"]
+	path = API
+	url = https://github.com/FarDust/API-Bases-Play-Music.git
