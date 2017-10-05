@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>Bases Play Music</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"  media="all"/>
+    <link rel="icon" href="favicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+  </head>
+  <body>
+    <!--Logo-->
+    <div class="BasesPlayMusic-container top" id="home">
+      <a href="index.html" class="BasesPlayMusic-logo">
+        Bases Play <span class="Music">Music</span>
+      </a>
+    </div>
+
+    <!--Menu superior-->
+    <ul class="topbar">
+      <li>
+        <span id="side-open" onclick="openNav()">
+          <img class="side-menu center" src="images/side.png" >
+        </span>
+      </li>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#display">Display</a></li>
+      <li><a href="#console">Console</a></li>
+      <li><a href="https://github.com/FarDust/Bases-Play-Music">GitHub</a></li>
+    </ul>
+
+    <!--Menu lateral-->
+    <div id="right-arrow" class="circle" onclick="openNav()" style="top:50%">
+      <span class="center" style="margin-top: 50%; margin-left:0">
+        <i class="arrowr"></i>
+      </span>
+    </div>
+
+    <div class="sidenav" id="lateral-menu">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+        &times;
+      </a>
+      <a class="side" href="index.html">Home</a>
+      <a class= "side" href="sites/tables.html">Tables</a>
+      <a class="side" href="sites/static.html">StaticSQL</a>
+      <a class="side" href="sites/search.html">DynamicSQL</a>
+    </div>
+
+    <div id="main">
+
+      <div class="presentation" style="margin-left: 25%;margin-right: 25%; text-align: center;">
+        <h1>Bases Play Music</h1>
+        <p>
+          <span id = "begin"><a href="sites/tables.html">Let's begin</a></span>
+          <ul class="ref-menu">
+            <li><a href="./sites/tables.html">Tables</a></li>
+            <li><a href="./sites/static.html">StaticSQL</a></li>
+            <li><a href="./sites/search.html">DynamicSQL</a></li>
+            <li><a href="./">Registrar</a></li>
+            <li><a href="./login.html">Login</a></li>
+          </ul>
+        </p>
+      </div>
+
+      <div class="info">
+        <p>
+          BasesPlayMusic es una aplicacion de consultas para bases de datos, creada
+          para el curso IIC2413. Entre sus opciones se encuentran desplegar
+          todas las tablas que esten definidas en un archivo *.sql del servidor,
+          realizar algunas consultas estaticas predefinidas y otras consultas de
+          busqueda las cuales suelen entregar una proyeccion de los datos.
+        </p>
+
+      </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="scripts/sidenav.js"></script>
+  </body>
+</html>
