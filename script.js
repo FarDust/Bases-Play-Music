@@ -21,7 +21,6 @@ function scrolling(){
   }
 }
 
-
 function printTable(tabla,printable){
   for (i=0; i < printable.length ; i++){
     tabla.insertRow();
@@ -67,3 +66,43 @@ function deleteTable(tabla){
     tabla.deleteRow(largo-1-i);
   }
 }
+
+function join(js1, js2, join_parameter, atributes) {
+  /*join_parameters must be an a array of length 2*/
+  var help = new Object();
+  for (var i = 0; i < atributes.length; i++){
+    help[atributes[i]] = i
+  }
+  var result = new Array();
+  cursor = 0;
+  for (var i = 0; i < js1.length; i++){
+    for (var j=0; j < js2.length; j++){
+      if (js1[i][join_parameter[0]] == js2[j][join_parameter[1]]){
+        var aux = new Object();
+        for (var key in js1[i]){
+          if (atributes.length > 0){
+            if (key in help){
+              aux[key] = js1[i][key];
+            }
+          } else {
+            aux[key] = js1[i][key];
+          }
+        }
+        for (var key in js2[j]){
+          if (atributes.length > 0){
+            if (key in help){
+              aux[key] = js2[j][key];
+            }
+          } else {
+            aux[key] = js2[j][key];
+          }
+        }
+        result[cursor] = aux;
+        cursor++;
+      }
+    }
+  }
+  return result
+}
+
+join([{'id' : 0, 'name': 'gabriel'}], [{'id':0, 'apellido': 'faundez'}], ['id','id'], []);
