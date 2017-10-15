@@ -67,6 +67,29 @@ function deleteTable(tabla){
   }
 }
 
+function example_condition(tuple){
+  var param = "id";
+  if (tuple[param] == 1){
+    return true
+  }else{
+    return false
+  }
+}
+
+function select(input, condition){
+  var output = new Array();
+  for (var i=0; i < input.length; i++){
+    var aux = new Object();
+    if (condition(input[i])){
+      for (key in input[i]){
+          aux[key] =  output[i][key];
+      }
+    }
+    output[i] = aux;
+  }
+  return output;
+}
+
 function join(js1, js2, join_parameter, atributes) {
   /*join_parameters must be an a array of length 2*/
   var help = new Object();
@@ -104,5 +127,3 @@ function join(js1, js2, join_parameter, atributes) {
   }
   return result
 }
-
-join([{'id' : 0, 'name': 'gabriel'}], [{'id':0, 'apellido': 'faundez'}], ['id','id'], []);
