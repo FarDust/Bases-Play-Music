@@ -5,7 +5,7 @@
   <body>
     <div id="errors" style="/* display: none; */">
       <?php
-      include(".credentials.php");
+      require(".credentials.php");
       include("sqlread.php");
 
       $sql = "";
