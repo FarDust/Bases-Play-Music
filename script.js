@@ -17,7 +17,7 @@ function scrolling(){
     logo.display = "none";
     logo.top = "inherit";
     menu["margin-top"] = "0";
-    side["margin-top"] = "0";
+    sidebar["margin-top"] = "0";
   }
 }
 
