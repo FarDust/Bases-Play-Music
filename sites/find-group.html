@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>Bases Play Music - Static DB</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css"  media="all"/>
+    <link rel="icon" href="../favicon.png">
+    <link rel="import" href="../snipsets/structure.html">
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <!--logo-->
+    <script type="text/javascript">
+      var doc= document.querySelector('link[rel="import"]').import;
+      console.log(doc);
+      //Logo
+      var text = doc.querySelector('#home');
+      document.body.appendChild(text.cloneNode(true));
+      //Menu lateral
+      var text = doc.querySelector('#right-arrow');
+      document.body.appendChild(text.cloneNode(true));
+      var text = doc.querySelector('#lateral-menu');
+      document.body.appendChild(text.cloneNode(true));
+      //Menu superior
+      var text = doc.querySelector('.topbar');
+      document.body.appendChild(text.cloneNode(true));
+      document.getElementById("lateral-menu").childNodes[4].href = "./dynamic.html";
+    </script>
+    <div id="main">
+      <h1>Busqueda de grupos</h1>
+      <div class="consult" >
+        <form action="../conexion.php" method="post" target="consultar">
+          <p>Buscar: </p>
+          <input type="text" name="rule" value="find" style="display:none;">
+          <input type="text" name="field" value="">
+          <select name="option">
+            <option value="banda">Banda</option>
+            <option value="artista">Artista</option>
+          </select>
+          <input id="javasend" type="submit" name="group">
+        </form>
+      </div>
+      <div class="info">
+        <div class="riht">
+          <p>Integrantes actuales</p>
+          <ul id="integrantes-a"></ul>
+        </div>
+        <div class="left">
+          <p>Integrantes pasados</p>
+          <ul id ="integrates-p">
+          </ul>
+        <div class="left-bottom">
+          <p>News feed</p>
+          <ul id = "news">
+
+          </ul>
+        </div>
+        <div class="right-bottom">
+          <p>Discos</p>
+          <table id  = "discs">
+
+          </table>
+        </div>
+        <div class="center-bottom">
+          <p>Proximos Conciertos</p>
+          <table id= "concerts"></table>
+        </div>
+        </div>
+      </div>
+    </div>
+    <iframe id="response" name= "consultar"></iframe>
+    <script type="text/javascript" src="../script.js"></script>
+    <script type="text/javascript" src="../scripts/sidenav.js"></script>
+  </body>
+
+</html>

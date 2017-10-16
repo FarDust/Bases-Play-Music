@@ -77,6 +77,7 @@ function example_condition(tuple){
 }
 
 function select(input, condition){
+  /*condition must be a function*/
   var output = new Array();
   for (var i=0; i < input.length; i++){
     var aux = new Object();
