@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+ <title>Registrar Usuario</title>
+ <meta charset = "utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+ <link rel="stylesheet" href="styles.css"  media="all"/>
+ <link rel="icon" href="favicon.png"> 
+ <link id="structure" rel="import" href="./snipsets/structure.html">
+
+</head>
+
+<body>
+ <script type="text/javascript">
+      var doc= document.querySelector('link[id="structure"]').import;
+      console.log(doc);
+      //Logo
+      var text = doc.querySelector('#home');
+      document.body.appendChild(text.cloneNode(true));
+      //Menu lateral
+      var text = doc.querySelector('#right-arrow');
+      document.body.appendChild(text.cloneNode(true));
+      var text = doc.querySelector('#lateral-menu');
+      document.body.appendChild(text.cloneNode(true));
+      //Menu superior
+      var text = doc.querySelector('.topbar');
+      document.body.appendChild(text.cloneNode(true));
+      document.getElementById("lateral-menu").childNodes[3].href = "./static.html";
+      document.getElementsByClassName("topbar")[0].childNodes[1].childNodes[1].href = "/home.html";
+    </script>
+
+ <header>
+ <div align = "center">
+ <h1>Registrate:</h1>
+ </div>
+ </header> 
+
+ <div align = "center">
+ <form action="registrar-usuario.php" method="post"> 
+
+ <hr />
+ <!--Nombre Usuario-->
+ <label for="nombre">User:</label><br>
+ <input type="text" name="username" maxlength="32" style = "width: 200px; height: 10px"required>
+ <br/><br/>
+
+ <!--Password-->
+ <label for="pass">Password:</label><br>
+ <input type="password" name="password" style = "width: 200px; height: 15px" maxlength="8" required>
+
+ <br/><br/>
+ <input type="submit" name="submit" style = "width: 100px; margin: 8px 3px;" value="SingUp">
+ <input type="reset" name="clear" value="Clear">
+
+ </form>
+ </div>
+
+<hr /><br />
+
+ </body>
+</html>
