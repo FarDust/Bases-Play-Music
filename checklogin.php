@@ -1,4 +1,6 @@
 <?php
+session_start();
+
  try {
     $db = new PDO("pgsql:dbname=grupo9;host=localhost;port=5432;user=grupo9;password=grupo9");
   } catch (Exception $e) {
