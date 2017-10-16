@@ -33,7 +33,7 @@
     <div id="main">
       <h1>Busqueda de grupos</h1>
       <div class="consult" >
-        <form action="../conexion.php" method="post" target="consultar">
+        <form action="../API/v1/index.php" method="post" target="consultar">
           <p>Buscar: </p>
           <input type="text" name="rule" value="find" style="display:none;">
           <input type="text" name="field" value="">
@@ -56,13 +56,11 @@
         <div class="left-bottom">
           <p>News feed</p>
           <ul id = "news">
-
           </ul>
         </div>
         <div class="right-bottom">
           <p>Discos</p>
           <table id  = "discs">
-
           </table>
         </div>
         <div class="center-bottom">
@@ -72,7 +70,7 @@
         </div>
       </div>
     </div>
-    <iframe id="response" name= "consultar"></iframe>
+    <iframe id="response" name= "consultar" style="display: inherit;"></iframe>
     <script type="text/javascript" src="../script.js"></script>
     <script type="text/javascript" src="../scripts/sidenav.js"></script>
   </body>
