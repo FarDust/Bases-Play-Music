@@ -1,9 +1,11 @@
 <?php
-session_start();
-?>
+ try {
+    require('./data.php'); #Pide las variables para conectarse a la base de datos.
+    $db = new PDO("pgsql:dbname=grupo9;host=localhost;port=5432;user=grupo9;password=grupo9");
+  } catch (Exception $e) {
+    echo "No se pudo conectar a la base de datos: $e";
+  }
 
-<?php
-require("conexion.php");
 $username = $_POST['username'];
 $pass = $_POST['password'];
  
@@ -26,7 +28,7 @@ if (count($data) == 1) {
     $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
 
     echo "Bienvenido! " . $_SESSION['username'];
-    echo "<br><br><a href=http://bases.ing.puc.cl/~grupo28/index.php>pagina inicial</a>"; 
+    header('Location: ./index.html');
 
  } else { 
    echo "Username o Password estan incorrectos.";

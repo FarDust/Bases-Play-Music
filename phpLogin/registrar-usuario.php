@@ -1,6 +1,13 @@
 <?php
 
- require("conexion.php");
+
+ try {
+    require('./data.php'); #Pide las variables para conectarse a la base de datos.
+    $db = new PDO("pgsql:dbname=grupo9;host=localhost;port=5432;user=grupo9;password=grupo9");
+  } catch (Exception $e) {
+    echo "No se pudo conectar a la base de datos: $e";
+  }
+
 
  $form_pass = $_POST['password'];
  $user = $_POST['username'];
