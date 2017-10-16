@@ -28,7 +28,7 @@ if (count($data) == 1) {
     $_SESSION['expire'] = $_SESSION['start'] + (5 * 60);
 
     echo "Bienvenido! " . $_SESSION['username'];
-    header('Location: ./index.html');
+    header('Location: ./home.html');
 
  } else { 
    echo "Username o Password estan incorrectos.";

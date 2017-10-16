@@ -2,7 +2,6 @@
 
 
  try {
-    require('./data.php'); #Pide las variables para conectarse a la base de datos.
     $db = new PDO("pgsql:dbname=grupo9;host=localhost;port=5432;user=grupo9;password=grupo9");
   } catch (Exception $e) {
     echo "No se pudo conectar a la base de datos: $e";
@@ -42,7 +41,7 @@
  $resultado -> execute();
  echo "<br />" . "<h2>" . "Usuario Creado Exitosamente!" . "</h2>";
  echo "<h4>" . "Bienvenido: " . $user . "</h4>" . "\n\n";
- echo "<h5>" . "Hacer Login: " . "<a href='login.html'>Login</a>" . "</h5>"; 
+ header('Location: ./bienvenido.html');
 
 } catch (Exception $e) {
     echo "No se pudo conectar a la base de datos: $e";
