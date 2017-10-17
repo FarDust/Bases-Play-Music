@@ -20,8 +20,13 @@
   		  echo $dynamicSQL[$_POST['option']];
   		  $sql = $dynamicSQL[$_POST['option']];
   	  }
-      $db = pg_connect("host=localhost dbname=".trim($dbname)." user=".trim($dbuser)." password=".trim($dbpass)."") or die('Conection failed: '.pg_last_error());
-  	  if (isset($_POST['dynamic'])){
+      if (isset($_POST['dynamic']) && ($_POST['field'] =='6' || $_POST['field'] =='' || $_POST['field'] =='8' || $_POST['field'] =='9' || $_POST['field'] =='10' || $_POST['field'] =='11')) {
+        $db = pg_connect("host=localhost dbname=grupo28 user=grupo28 password=grupo28") or die('Conection failed: '.pg_last_error());
+      }else {
+        $db = pg_connect("host=localhost dbname=".trim($dbname)." user=".trim($dbuser)." password=".trim($dbpass)."") or die('Conection failed: '.pg_last_error());
+      }
+
+      if (isset($_POST['dynamic'])){
         unset($_POST['dynamic']);
         unset($_POST['option']);
         var_dump($_POST);
