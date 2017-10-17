@@ -29,10 +29,17 @@
     $result = $db -> prepare($query);
     $result -> execute();
     $dataCollected = $result -> fetchAll();
-    #Obtiene todos los resultados de la consulta en forma de un arreglo
- #si quieren ver el arreglo de la consulta usar print_r($array);
+  ?>
+
+    <table><tr> <th>Noticias: </th> </tr>
+
     <?php
     foreach ($dataCollected as $p) {
       echo "<tr> <th>$p[0]</th><th>$p[1]</th><th>$p[2]</th> </tr>";
     }
     ?>
+
+
+
+    <?php
+
