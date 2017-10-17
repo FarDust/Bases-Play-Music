@@ -8,10 +8,11 @@ function fullyload(){
     var array = JSON.parse(textArea.innerHTML);
     console.log(array);
 
-    for (key in array['a_members']){
+    for (key in array['r_members']){
       var t = document.createTextNode(array[key]);
       var node = document.createElement("li");
-      ia.appendChild(t);
+      node.appendChild(t);
+      ir.appendChild(node);
     }
   }
 }
