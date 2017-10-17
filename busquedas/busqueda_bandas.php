@@ -60,9 +60,68 @@
         AND baparece_en.nid = noticiabandas.nid
         AND banda.nombre = $NOMBRE_BANDA;";
 
+    $query_5 = 
+    "SELECT noticiabandas.titulo, noticiabandas.contenido, noticiabandas.tag
+    FROM noticiabandas, baparece_en, banda
+    WHERE banda.bid = baparece_en.bid
+    AND baparece_en.nid = noticiabandas.nid
+    AND banda.nombre = $NOMBRE_BANDA;";
+
+    /*Consulta integrantes actuales y pasados de una banda (nombre) */
+
+    $query_6 = 
+    "SELECT artista.nombre
+    FROM artista, toca_en, banda
+    WHERE banda.bid = toca_en.bid
+      AND toca_en.aid = artista.aid
+      AND toca_en.actual = 'T'
+      AND banda.nombre = $NOMBRE_BANDA;";
+
+/*Artistas pasados*/
+
+    $query_7 = 
+    "SELECT artista.nombre
+    FROM artista, toca_en, banda
+    WHERE banda.bid = toca_en.bid
+      AND toca_en.aid = artista.aid
+      AND toca_en.actual = 'F'
+      AND banda.nombre = $NOMBRE_BANDA;";
+
+/* Consulta conciertos futuros */
+
+    $query_8 = 
+    "SELECT concierto.principal, concierto.localizacion, concierto.fecha
+    FROM concierto, banda, participo_en
+    WHERE participo_en.bid = banda.bid
+    AND concierto.cid = participo_en.cid
+    AND concierto.fecha > now()
+    AND banda.nombre = $NOMBRE_BANDA;";
+
+
+
+
     $resultado_4 = $db_2 -> prepare($query_4);
     $resultado_4 -> execute();
     $data_4 = $resultado_4 -> fetchAll();
+
+    $resultado_5 = $db_2 -> prepare($query_5);
+    $resultado_5 -> execute();
+    $data_5 = $resultado_5 -> fetchAll();
+
+    $resultado_6 = $db_2 -> prepare($query_6);
+    $resultado_6 -> execute();
+    $data_6 = $resultado_6 -> fetchAll();
+
+    $resultado_7 = $db_2 -> prepare($query_7);
+    $resultado_7 -> execute();
+    $data_7 = $resultado_7 -> fetchAll();
+
+    $resultado_8 = $db_2 -> prepare($query_8);
+    $resultado_8 -> execute();
+    $data_8 = $resultado_8 -> fetchAll();
+
+
+
 
     /*$result = $db -> prepare($query);
     $result -> execute();
@@ -73,4 +132,8 @@
     print_r($data_2);
     print_r($data_3);
     print_r($data_4);
+    print_r($data_5);
+    print_r($data_6);
+    print_r($data_7);
+    print_r($data_8);
     ?>
