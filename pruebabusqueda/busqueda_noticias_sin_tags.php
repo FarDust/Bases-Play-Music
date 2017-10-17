@@ -6,9 +6,9 @@
     echo "No se pudo conectar a la base de datos: $e";
   }
 
-    $FECHA_FINAL = $_POST["FECHA_FINAL"];
-    $FECHA_INICIAL = $_POST["FECHA_INICIAL"];
-    print_r($FECHA_INICIAL);
+    $FECHA_FINAL = "'".$_POST["FECHA_FINAL"]."'";
+    $FECHA_INICIAL = "'".$_POST["FECHA_INICIAL"]."'";
+
 
 
     $query = 
@@ -30,5 +30,9 @@
     $result -> execute();
     $dataCollected = $result -> fetchAll();
     #Obtiene todos los resultados de la consulta en forma de un arreglo
-    print_r($dataCollected); #si quieren ver el arreglo de la consulta usar print_r($array);
+ #si quieren ver el arreglo de la consulta usar print_r($array);
+    <?php
+    foreach ($dataCollected as $p) {
+      echo "<tr> <th>$p[0]</th><th>$p[1]</th><th>$p[2]</th> </tr>";
+    }
     ?>

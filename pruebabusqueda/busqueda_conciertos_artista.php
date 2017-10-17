@@ -6,9 +6,9 @@
     echo "No se pudo conectar a la base de datos: $e";
   }
 
-    $VALOR_BANDA = $_POST["NOMBRE"];
-    $FECHA_FINAL = $_POST["FECHA_FINAL"];
-    $FECHA_INICIAL = $_POST["FECHA_INICIAL"];
+    $VALOR_BANDA = "'".$_POST["NOMBRE"]."'";
+    $FECHA_FINAL = "'".$_POST["FECHA_FINAL"]."'";
+    $FECHA_INICIAL = "'".$_POST["FECHA_INICIAL"]."'";
     print_r($FECHA_INICIAL);
 
 
@@ -19,20 +19,26 @@
 	AND concierto.cid = participo_en.cid
 	AND concierto.fecha < $FECHA_FINAL
 	AND concierto.fecha > $FECHA_INICIAL
-	AND banda.nombre = $VALOR_BANDA;";
-	// UNION
-	// SELECT concierto.principal, concierto.fecha, concierto.localización
-	// FROM concierto, aparticipo_en, artista
-	// WHERE concierto.cid = aparticipo_en.cid
-	// AND artista.aid = aparticipo_en.aid
-	// AND concierto.fecha < $FECHA_FINAL
-	// AND concierto.fecha > $FECHA_INICIAL
-	// AND artista.nombre = $VALOR_BANDA;";
+	AND banda.nombre = $VALOR_BANDA
+	UNION
+	SELECT concierto.principal, concierto.fecha, concierto.localización
+	FROM concierto, aparticipo_en, artista
+	WHERE concierto.cid = aparticipo_en.cid
+	AND artista.aid = aparticipo_en.aid
+	AND concierto.fecha < $FECHA_FINAL
+	AND concierto.fecha > $FECHA_INICIAL
+	AND artista.nombre = $VALOR_BANDA;";
     $result = $db -> prepare($query);
     $result -> execute();
     $dataCollected = $result -> fetchAll();
-    #Obtiene todos los resultados de la consulta en forma de un arreglo
-    print_r($dataCollected); #si quieren ver el arreglo de la consulta usar print_r($array);
+    ?>
+
+    <table><tr> <th>Concierto Artistas</th> </tr>
+
+    <?php
+    foreach ($dataCollected as $p) {
+      echo "<tr> <th>$p[0]</th><th>$p[1]</th><th>$p[2]</th> </tr>";
+    }
     ?>
 
 
