@@ -6,7 +6,7 @@
     echo "No se pudo conectar a la base de datos: $e";
   }
 
-    $NOMBRE_BANDA= $_POST["NOMBRE"];
+    $NOMBRE_BANDA= "'".$_POST["NOMBRE"]."'";
 
     // Consulta para la info basica de la banda
     $query_1 = 

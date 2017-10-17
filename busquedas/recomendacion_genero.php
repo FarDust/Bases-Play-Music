@@ -21,8 +21,16 @@
     $result -> execute();
     $dataCollected = $result -> fetchAll();
 
+ ?>
+
+    <table><tr> <th>recomendación:</th> </tr>
+
     <?php
     foreach ($dataCollected as $p) {
       echo "<tr> <th>$p[0]</th><th>$p[1]</th><th>$p[2]</th> </tr>";
     }
     ?>
+
+
+
+    <?php
