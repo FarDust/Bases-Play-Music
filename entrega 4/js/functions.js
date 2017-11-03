@@ -24,12 +24,13 @@ $(document).ready(function() {
         console.log('Id ingresado', valor_id);
         // Consultar a la API
         $.ajax({
+			crossOrigin: true,
             type: 'GET',
             url: url_api + '/mensajes',
             data: { id: valor_id }
         }).done(function(data_recibida) {
             console.log('Información recibida desde la api', data_recibida);
-            document.getElementById('resultado').innerHTML = data_recibida['entities'];
+            document.getElementById('resultado').innerHTML = JSON.stringify(data_recibida['entities'], null , 2);
         })
     })
 
@@ -40,6 +41,7 @@ $(document).ready(function() {
         console.log('Id ingresado', valor_id);
         // Consultar a la API
         $.ajax({
+			crossOrigin: true,
             type: 'GET',
             url: url_api + '/artista/' + valor_id
         }).done(function(data_recibida) {
@@ -57,6 +59,7 @@ $(document).ready(function() {
         console.log('ids ingresados', id_1, id_2);
         // Consultar a la API
         $.ajax({
+			crossOrigin: true,
             type: 'GET',
             url: url_api + '/artista',
             data: { id1: id_1, id2: id_2 }
