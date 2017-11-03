@@ -1,0 +1,65 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Frontend - Bases de datos</title>
+    <!-- Importar CSS de bootrsap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Importar CSS propio -->
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Émpieza Navegacion -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <!-- Contenedor principal del menu -->
+        <div class="container">
+            <!-- Nombre de la pagina y sección del lado izquierdo -->
+            <a class="navbar-brand" href="../index.html">Base de datos - Grupo 9</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- Icono para el menu móvil -->
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Sección del lado derecho con las opciones -->
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="consulta_1.html">Consulta 1<span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="consulta_2.html">Consulta 2<span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item active"><a class="nav-link" href="consulta_3.html">Consulta 3</a></li>
+                    <li class="nav-item"><a class="nav-link" href="consulta_4.html">Consulta 4</a></li>
+                 </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Termina Navegación -->
+    <!-- Empieza contenido principal de la pagina -->
+    <div class="container">
+        <div class="row">
+            <!-- Espacio para información basica de la consulta -->
+            <div class="col-lg-12 text-center">
+                <h1 class="mt-5">Consulta 3</h1>
+                <p class="lead">Ingresa dos ids de dos artistas y obtendrás todos los mensajes intercambiados entre esos dos artistas.</p>
+            </div>
+        </div>
+        <!-- Espacio con el input para buscar -->
+        <div class="row">    
+                <div class="col">
+                    <input class="form-control" id="id_artista_1" placeholder="Ingresa el id del primer artista...">
+                </div>
+                <div class="col">
+                    <input class="form-control" id="id_artista_2" placeholder="Ingresa el id del segundo artista...">
+                </div>
+                <br><button type="submit" class="btn btn-primary buscar_dos_artistas">Buscar</button>
+        </div>
+        <!-- Espacio para el resultado -->
+        <p id="resultado_mensajes"></p>
+    </div>
+    <!-- Termina contenido principal de la pagina -->
+
+    <!-- Importar Js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <!-- Js propio -->
+    <script type="text/javascript" src="../js/functions.js"></script>
+</body>
+</html>
