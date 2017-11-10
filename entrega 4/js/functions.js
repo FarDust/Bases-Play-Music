@@ -70,10 +70,10 @@ $(document).ready(function() {
     })
     "Función incompleta!!!!"
 
-    $('.mensajes_por_texto').click(function()){
+    $('.mensajes_por_texto').click(function() {
         var obligatory = document.getElementById('obligatorias').value;
-        var optional = document.getElementById('opcionales').value;
-        var norequired = document.getElementById('no_requrido').value;
+        var optional = document.getElementById('quizas').value;
+        var norequired = document.getElementById('no_pueden').value;
         console.log('Frases ingresadas: ', obligatory, optional, norequired);
         //consultar a la API
         $.ajax({
@@ -81,17 +81,8 @@ $(document).ready(function() {
             type: 'GET'
             url: url_api + '/mensajesportexto'
             data = {oligatorio: obligatory, opcional: optional, no_requerido: norequired}
-        }).done(function(data_recibida)){
+        }).done(function(data_recibida){
             console.log("Información recibida desde la aip: ", data_recibida);
-            
-        }
-
-
-
-
-
-
-
-    }
-
-});
+            document.getElementById('resultado_mensajes').innerHTML = data_recibida['mensajes'];
+        })
+    })
