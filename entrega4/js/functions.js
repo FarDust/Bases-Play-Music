@@ -78,9 +78,9 @@ $(document).ready(function() {
         //consultar a la API
         $.ajax({
             crossOrigin: true,
-            type: 'GET'
-            url: url_api + '/mensajesportexto'
-            data = {oligatorio: obligatory, opcional: optional, no_requerido: norequired}
+            type: 'POST',
+            url: url_api + '/mensajes',
+            data: {obligatorias: obligatory, quizas: optional, no_pueden: norequired}
         }).done(function(data_recibida){
             console.log("Información recibida desde la aip: ", data_recibida);
             document.getElementById('resultado_mensajes').innerHTML = data_recibida['mensajes'];
