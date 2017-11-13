@@ -24,15 +24,15 @@ $(document).ready(function() {
         console.log('Id ingresado', valor_id);
         // Consultar a la API
         $.ajax({
-			crossOrigin: true,
+            crossOrigin: true,
             type: 'GET',
             url: url_api + '/mensajes',
             data: { id: valor_id }
         }).done(function(data_recibida) {
             console.log('Información recibida desde la api', data_recibida);
             document.getElementById('resultado').innerHTML = JSON.stringify(data_recibida['entities'], null , 2);
-        })
-    })
+        });
+    });
 
     // Funcion para segunda consulta
     $('.buscar_artista').click(function() {
@@ -41,15 +41,15 @@ $(document).ready(function() {
         console.log('Id ingresado', valor_id);
         // Consultar a la API
         $.ajax({
-			crossOrigin: true,
+            crossOrigin: true,
             type: 'GET',
             url: url_api + '/artista/' + valor_id
         }).done(function(data_recibida) {
             console.log('Información recibida desde la api', data_recibida);
             document.getElementById('resultado_informacion').innerHTML = data_recibida['informacion'];
             document.getElementById('resultado_mensajes').innerHTML = data_recibida['mensajes'];
-        })
-    })
+        });
+    });
 
     // Funcion para la tercera consulta
     $('.buscar_dos_artistas').click(function() {
@@ -59,15 +59,15 @@ $(document).ready(function() {
         console.log('ids ingresados', id_1, id_2);
         // Consultar a la API
         $.ajax({
-			crossOrigin: true,
+            crossOrigin: true,
             type: 'GET',
             url: url_api + '/artista',
             data: { id1: id_1, id2: id_2 }
         }).done(function(data_recibida) {
             console.log('Información recibida desde la api', data_recibida);
             document.getElementById('resultado_mensajes').innerHTML = data_recibida['mensajes'];
-        })
-    })
+        });
+    });
     "Función incompleta!!!!"
 
     $('.mensajes_por_texto').click(function() {
@@ -84,5 +84,6 @@ $(document).ready(function() {
         }).done(function(data_recibida){
             console.log("Información recibida desde la aip: ", data_recibida);
             document.getElementById('resultado_mensajes').innerHTML = data_recibida['mensajes'];
-        })
-    })
+        });
+    });
+});
