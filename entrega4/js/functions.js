@@ -68,7 +68,6 @@ $(document).ready(function() {
             document.getElementById('resultado_mensajes').innerHTML = data_recibida['mensajes'];
         });
     });
-    "Función incompleta!!!!"
 
     $('.mensajes_por_texto').click(function() {
         var obligatory = document.getElementById('obligatorias').value;
@@ -79,8 +78,10 @@ $(document).ready(function() {
         $.ajax({
             crossOrigin: true,
             type: 'POST',
+            data: JSON.stringify({obligatorias: obligatory, quizas: optional, no_pueden: norequired}),
+            contentType: "application/json; charset=utf-8",
+            traditional: true,
             url: url_api + '/mensajes',
-            data: {obligatorias: obligatory, quizas: optional, no_pueden: norequired}
         }).done(function(data_recibida){
             console.log("Información recibida desde la aip: ", data_recibida);
             document.getElementById('resultado_mensajes').innerHTML = data_recibida['mensajes'];
