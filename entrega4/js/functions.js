@@ -70,20 +70,20 @@ $(document).ready(function() {
     });
 
     $('.mensajes_por_texto').click(function() {
-        var obligatory = document.getElementById('obligatorias').value;
-        var optional = document.getElementById('quizas').value;
-        var norequired = document.getElementById('no_pueden').value;
+        var obligatory = document.getElementById('obligatorias').value.split(" ");
+        var optional = document.getElementById('quizas').value.split(" ");
+        var norequired = document.getElementById('no_pueden').value.split(" ");
         console.log('Frases ingresadas: ', obligatory, optional, norequired);
         //consultar a la API
         $.ajax({
             crossOrigin: true,
             type: 'POST',
-            data: JSON.stringify({obligatorias: obligatory, quizas: optional, no_pueden: norequired}),
+            data: JSON.stringify({"obligatorias": obligatory, "quizas": optional, "no_pueden": norequired}),
             contentType: "application/json; charset=utf-8",
             traditional: true,
             url: url_api + '/mensajes',
         }).done(function(data_recibida){
-            console.log("Información recibida desde la aip: ", data_recibida);
+            console.log("Información recibida desde la api: ", data_recibida);
             document.getElementById('resultado_mensajes').innerHTML = data_recibida['mensajes'];
         });
     });
