@@ -2,7 +2,7 @@
 $(document).ready(function() {
     var url_api = 'http://localhost:5000';
 
-    // Cuando se hace click en un boton 
+    // Cuando se hace click en un boton
     $('.boton').click(function() {
         // Variable con el valor del boton clickeado
         var valor_boton = $(this).val();
@@ -30,7 +30,15 @@ $(document).ready(function() {
             data: { id: valor_id }
         }).done(function(data_recibida) {
             console.log('Información recibida desde la api', data_recibida);
-            document.getElementById('resultado').innerHTML = JSON.stringify(data_recibida['entities'], null , 2);
+            result = data_recibida['entities'];
+            element = document.getElementById('resultado');
+            element.innerHTML = ""
+            for (var i=0; i < result.length; i++) {
+              var fixContainer = document.createElement('DIV');
+              fixContainer.className = "fix-container";
+              fixContainer = pretty(result[i], fixContainer);
+              element.appendChild(fixContainer);
+            }
         });
     });
 
@@ -65,7 +73,15 @@ $(document).ready(function() {
             data: { id1: id_1, id2: id_2 }
         }).done(function(data_recibida) {
             console.log('Información recibida desde la api', data_recibida);
-            document.getElementById('resultado_mensajes').innerHTML = data_recibida['mensajes'];
+            result = data_recibida['mensajes'];
+            element = document.getElementById('resultado_mensajes');
+            element.innerHTML = ""
+            for (var i=0; i < result.length; i++) {
+              var fixContainer = document.createElement('DIV');
+              fixContainer.className = "fix-container";
+              fixContainer = pretty(result[i], fixContainer);
+              element.appendChild(fixContainer);
+            }
         });
     });
 
@@ -84,7 +100,31 @@ $(document).ready(function() {
             url: url_api + '/mensajes',
         }).done(function(data_recibida){
             console.log("Información recibida desde la api: ", data_recibida);
-            document.getElementById('resultado_mensajes').innerHTML = data_recibida['mensajes'];
+            result = data_recibida['mensajes'];
+            element = document.getElementById('resultado_mensajes');
+            element.innerHTML = ""
+            for (var i=0; i < result.length; i++) {
+              var fixContainer = document.createElement('DIV');
+              fixContainer.className = "fix-container";
+              fixContainer = pretty(result[i], fixContainer);
+              element.appendChild(fixContainer);
+            }
         });
     });
+    function pretty(obj,htmlElement){
+      console.log(obj);
+    	for (var key in obj){
+    			var child = document.createElement('DIV');
+    			child.className  = "info-container"
+    			var text = document.createTextNode(key+ ": ");
+    			var inner = document.createElement('SPAN');
+    			inner.className  = "light"
+    			inner.appendChild(document.createTextNode(obj[key]))
+    			child.appendChild(text);
+    			child.appendChild(inner);
+    			htmlElement.appendChild(child);
+    	}
+      return htmlElement
+    }
+
 });
