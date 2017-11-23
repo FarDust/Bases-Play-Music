@@ -1,6 +1,6 @@
 // Cuando se cargá la vista del front
 $(document).ready(function() {
-    var url_api = 'http://localhost:5000';
+    var url_api = 'http://bd18.ing.puc.cl';
 
     // Cuando se hace click en un boton
     $('.boton').click(function() {
@@ -97,7 +97,7 @@ $(document).ready(function() {
             data: JSON.stringify({"obligatorias": obligatory, "quizas": optional, "no_pueden": norequired}),
             contentType: "application/json; charset=utf-8",
             traditional: true,
-            url: url_api + '/mensajes',
+            url: url_api + '/filter',
         }).done(function(data_recibida){
             console.log("Información recibida desde la api: ", data_recibida);
             result = data_recibida['mensajes'];
