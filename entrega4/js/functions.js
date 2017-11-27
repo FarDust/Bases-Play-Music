@@ -54,8 +54,20 @@ $(document).ready(function() {
             url: url_api + '/artista/' + valor_id
         }).done(function(data_recibida) {
             console.log('Información recibida desde la api', data_recibida);
-            document.getElementById('resultado_informacion').innerHTML = data_recibida['informacion'];
-            document.getElementById('resultado_mensajes').innerHTML = data_recibida['mensajes'];
+            document.getElementById('nombre_artista').innerHTML = data_recibida['informacion'][0]['name'];
+            document.getElementById('edad_artista').innerHTML = data_recibida['informacion'][0]['age'];
+            document.getElementById('descripcion_artista').innerHTML = data_recibida['informacion'][0]['description'];
+            /*document.getElementById('resultado_informacion').innerHTML = data_recibida['informacion'];*/
+            /*document.getElementById('resultado_mensajes').innerHTML = data_recibida['mensajes'];*/
+            element = document.getElementById('resultado_mensajes');
+            element.innerHTML = "";
+            result = data_recibida['mensajes'];
+            for(let i = 0; i < result.length; i ++) {
+                let fixContainer = document.createElement('DIV');
+                fixContainer.className = 'fix-container';
+                fixContainer = pretty(result[i], fixContainer);
+                element.appendChild(fixContainer);
+            };
         });
     });
 
